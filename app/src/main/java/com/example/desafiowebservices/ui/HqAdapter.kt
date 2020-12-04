@@ -10,11 +10,10 @@ import com.example.desafiowebservices.R
 import com.example.desafiowebservices.models.Results
 
 class HqAdapter (
+    var listaHq: ArrayList<Results>,
     val listener: onHqClick
     ):
     RecyclerView.Adapter<HqAdapter.HqViewHolder>() {
-
-    var listaHq = ArrayList<Results>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HqAdapter.HqViewHolder {
         return HqViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item, parent,false))
@@ -23,17 +22,14 @@ class HqAdapter (
     override fun onBindViewHolder(holder: HqAdapter.HqViewHolder, position: Int) {
         val hq = listaHq[position]
         holder.numero.text = hq.id.toString()
+//        holder.numero.text = hq.images
+        holder.imagem.setImageResource(R.drawable.hq_hoi)
     }
 
     override fun getItemCount() = listaHq.size
 
     interface onHqClick {
         fun hqClick (position: Int)
-    }
-
-    fun addList(list: ArrayList<Results>){
-        listaHq.addAll(list)
-        notifyDataSetChanged()
     }
 
     inner class HqViewHolder(itemView: View) :

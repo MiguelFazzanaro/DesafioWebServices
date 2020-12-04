@@ -20,14 +20,6 @@
         app:title="Register"
         app:titleTextColor="@color/white" />
 
-    <LinearLayout
-        android:id="@+id/alinha"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tbCadastro"
-        android:orientation="horizontal" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -44,6 +36,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardview1"
         android:layout_width="match_parent"
         android:layout_height="320dp"
         android:layout_marginLeft="25dp"
@@ -121,10 +114,11 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:backgroundTint="@color/backgroundFoto"
-        app:cardCornerRadius="90dp"
+        app:cardCornerRadius="40dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardview1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/alinha">
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
             android:layout_width="70dp"

@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.desafiowebservices.R
+import com.example.desafiowebservices.models.Results
 import com.example.desafiowebservices.services.service
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -15,7 +16,7 @@ class MainActivity : AppCompatActivity()
     , HqAdapter.onHqClick
 {
 //    var lista: ArrayList<Hq> = getHq()
-    var adapterR: HqAdapter = HqAdapter(this)
+    lateinit var adapterR: HqAdapter
 
     private val viewModel by viewModels<MainViewModel> {
         object : ViewModelProvider.Factory {
@@ -29,12 +30,13 @@ class MainActivity : AppCompatActivity()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        rvHqs.adapter = adapterR
+//        rvHqs.adapter = adapterR
         rvHqs.layoutManager = GridLayoutManager(this, 3)
         rvHqs.setHasFixedSize(true)
 
         viewModel.comics.observe(this) {
-            adapterR.addList(it)
+            adapterR = HqAdapter(it,this)
+            rvHqs.adapter = adapterR
         }
         viewModel.getComics()
     }

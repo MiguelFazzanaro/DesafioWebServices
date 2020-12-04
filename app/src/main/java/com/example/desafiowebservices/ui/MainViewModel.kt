@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.desafiowebservices.models.Data
 import com.example.desafiowebservices.models.Results
 import com.example.desafiowebservices.services.Service
 import com.example.desafiowebservices.services.service
