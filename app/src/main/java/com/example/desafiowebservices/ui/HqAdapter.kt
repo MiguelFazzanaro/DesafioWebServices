@@ -7,10 +7,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.desafiowebservices.R
-import com.example.desafiowebservices.models.Results
+import com.example.desafiowebservices.models.Msg
+import com.squareup.picasso.Picasso
 
 class HqAdapter (
-    var listaHq: ArrayList<Results>,
+    var listaHq: Msg,
     val listener: onHqClick
     ):
     RecyclerView.Adapter<HqAdapter.HqViewHolder>() {
@@ -20,13 +21,13 @@ class HqAdapter (
     }
 
     override fun onBindViewHolder(holder: HqAdapter.HqViewHolder, position: Int) {
-        val hq = listaHq[position]
+        val hq = listaHq.data.results[position]
+        var imageCompleta = (hq.images.get(0).path)+ "." + (hq.images.get(0).extension)
         holder.numero.text = hq.id.toString()
-//        holder.numero.text = hq.images
-        holder.imagem.setImageResource(R.drawable.hq_hoi)
+        Picasso.get().load("$imageCompleta").into(holder.imagem)
     }
 
-    override fun getItemCount() = listaHq.size
+    override fun getItemCount() = listaHq.data.results.size
 
     interface onHqClick {
         fun hqClick (position: Int)

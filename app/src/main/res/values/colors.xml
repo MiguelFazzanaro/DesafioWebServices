@@ -10,5 +10,6 @@
     <color name="background">#FF00162C</color>
     <color name="detalheVermelho">#FFEA2427</color>
     <color name="backgroundFoto">#FFEFF2F5</color>
+    <color name="transp">#00F44336</color>
 
 </resources>
