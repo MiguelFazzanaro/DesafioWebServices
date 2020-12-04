@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="110dp"
+    android:layout_height="180dp"
+    android:background="@color/background">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="100dp"
+        android:layout_height="180dp"
+        android:background="@color/background">
+
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="180dp"
+            android:orientation="vertical"
+            android:background="@color/background">
+            <ImageView
+                android:id="@+id/ivHqImage"
+                android:layout_width="100dp"
+                android:layout_height="150dp"
+                android:src="@drawable/hq_hoi"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="5dp">
+                <TextView
+                    android:id="@+id/tvHqNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="#96"
+                    android:textColor="@color/white"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
