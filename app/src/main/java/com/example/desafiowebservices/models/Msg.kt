@@ -16,7 +16,7 @@ data class Results (
 //    var thumbnail: ArrayList<Thumbnail>,
     var images: ArrayList<Images>) : Serializable
 
-data class Thumbnail (var path: Int, var extension: Int)
+//data class Thumbnail (var path: Int, var extension: Int)
 
 data class Images (var path: String, var extension: String)
 

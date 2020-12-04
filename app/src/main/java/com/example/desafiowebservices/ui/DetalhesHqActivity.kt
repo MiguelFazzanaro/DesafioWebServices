@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.example.desafiowebservices.R
-import com.example.desafiowebservices.models.Msg
 import com.example.desafiowebservices.models.Results
 import kotlinx.android.synthetic.main.activity_detalhes_hq.*
 
@@ -32,6 +31,5 @@ class DetalhesHqActivity : AppCompatActivity() {
         tvDetalheHqNome.text = detail.title
         tvDetalheHqPagina.text = detail.pageCount.toString()
         tvDetalheHqPreco.text = detail.prices.toString()
-
     }
 }

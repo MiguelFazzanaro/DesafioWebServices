@@ -7,10 +7,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.desafiowebservices.R
-import com.example.desafiowebservices.models.Msg
 import com.example.desafiowebservices.models.Results
 
-class HqAdapter ():
+class HqAdapter (
+    val listener: onHqClick
+    ):
     RecyclerView.Adapter<HqAdapter.HqViewHolder>() {
 
     var listaHq = ArrayList<Results>()
@@ -41,12 +42,15 @@ class HqAdapter ():
         val numero: TextView = itemView.findViewById(R.id.tvHqNumber)
         val imagem: ImageView = itemView.findViewById(R.id.ivHqImage)
 
-
         init {
             itemView.setOnClickListener(this)
         }
 
         override fun onClick(v: View?) {
+            val position = adapterPosition
+            if (RecyclerView.NO_POSITION != position) {
+                listener.hqClick(position)
+            }
         }
     }
 }

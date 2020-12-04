@@ -12,7 +12,6 @@ import kotlinx.coroutines.launch
 class MainViewModel(service: Service) : ViewModel() {
     val comics = MutableLiveData<ArrayList<Results>>()
 
-
     fun getComics (){
         viewModelScope.launch {
 //            Log.i("Tag",
@@ -22,11 +21,10 @@ class MainViewModel(service: Service) : ViewModel() {
                 "1",
                 "d5bbf7fca619cb6f20ca7a1f344dd5ec",
                 "e9ef396685a3f9d8644b5a12c8bbab78",
-                "1009610"
-//                "title"
+                "1009610",
+                "title"
 //            ).toString()
             )
         }
     }
-
 }
